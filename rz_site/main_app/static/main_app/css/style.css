@@ -1,0 +1,111 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+h2 {
+    margin-top: 0;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 34px;
+	/* identical to box height, or 142% */
+
+	display: flex;
+	align-items: center;
+	margin-bottom: 0;
+
+	color: #163152;
+}
+p {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	/* or 150% */
+
+
+	color: #163152;
+}
+span {
+    font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	/* or 150% */
+
+
+	color: #163152;
+}
+.page-header {
+	max-width: 1200px;
+	margin-top: 20px;
+	margin-left: 55px;
+	margin-bottom: 120px;
+
+}
+.nav-header {
+	display: flex;
+	align-items: center;
+}
+.icon-header {
+	margin-right: 50px;
+}
+.list-header {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 50px;
+}
+.item-list a {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	/* identical to box height, or 129% */
+
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 18px;
+	border: 1px solid  #ffffff;
+	opacity: 0.8;
+
+	color: #163152;
+} 
+.item-list a:hover {
+	border-bottom: 1px solid #00C6BD;
+	opacity: 1;
+}
+.item-list a:active {
+	opacity: 0.5;
+}
+.button {
+  display: inline-block;
+  background: #00C6BD;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: Tahoma;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 100;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.button:hover {
+    opacity: 0.7;
+}
+.button:active {
+    opacity: 0.5;
+}
+
+option:hover {
+  background-color: #00C6BD;
+}
+
