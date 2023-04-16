@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Review
 
 
 def index(request):
@@ -10,7 +11,11 @@ def work_examples(request):
 
 
 def reviews(request):
-    return render(request, 'main_app/reviews.html')
+    all_reviews = Review.objects.all()
+    context = {
+        'reviews': all_reviews,
+    }
+    return render(request, 'main_app/reviews.html', context=context)
 
 
 def articles(request):
