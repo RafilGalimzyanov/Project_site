@@ -15,13 +15,21 @@
 <body>
 	<header class="page-header">
 		<nav class="nav-header">
-			<a class="icon-header" href="{% url 'index' %}"><img src="static/main_app/img/icon.png" alt="Иконка компании" width="60px" height="60px"></a>
+			<a class="icon-header" href="{% url 'index' %}">
+					<img src="{% static 'main_app/img/icon.png' %}" alt="Иконка компании" width="60px" height="60px">
+			</a>
 			<ul class="list-header">
-				<li class="item-list"><a href="{% url 'index' %}">Главная страница</a></li>
-				<li class="item-list"><a href="{% url 'work_examples' %}">Примеры работ</a></li>
-				<li class="item-list"><a href="{% url 'reviews' %}">Отзывы</a></li>
-				<li class="item-list"><a href="{% url 'articles' %}">Статьи</a></li>
-				<li class="item-list"><a href="{% url 'authorization' %}">Авторизация</a></li>
+				{% for m in menu %}
+					<li class="item-list"><a href="{% url m.url %}">{{m.title}}</a></li>
+				{% endfor %}
+
+				{% if request.user.is_authenticated %}
+				<li class="item-list last-elem"> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
+				{% else %}
+				<li class="item-list last-elem">
+					<a href="{% url 'registration' %}">Регистрация</a> | <a href="{% url 'authorization' %}">Войти</a>
+				</li>
+				{% endif %}
 			</ul>
 		</nav>
 	</header>
