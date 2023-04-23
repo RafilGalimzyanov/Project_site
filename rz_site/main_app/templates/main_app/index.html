@@ -1,11 +1,192 @@
 {% extends 'main_app/base.html' %}
+{% load bootstrap_icons %}
 
-{% block title %}
-Главная страница
-{% endblock %}
+{% block title %}Главная{% endblock %}
 
 {% block content %}
-	<section class="about-ex">
-		<h2>Здесь будет главная страница</h2>
-	</section>
-{% endblock %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="bg-image mb-3 p-4">
+                <div class="col-lg-6 col-md-8 col-lg-10 col-xl-9 p-4">
+                    <div class="h2 d-block align-middle bg-light rounded px-4 py-3">
+                        Консультативная помощь студентам в успешной сдаче экзаменов, зачётов и контрольных работ
+                    </div>
+                    <a href="#features" class="btn btn-lg btn-warning mt-2 mb-5 me-2 px-4">Наши преимущества {% bs_icon 'arrow-down' size='24px' %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-light rounded px-4 px-md-5 py-4 mb-3">
+                <h2 class="mt-2 mb-5 ms-3">Дисциплины, с которыми мы можем помочь:</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'infinity' size='32px' %}
+                                </div>
+                                <div class="subject-title">Высшая математика</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'bar-chart' size='32px' %}
+                                </div>
+                                <div class="subject-title">Математический анализ</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'graph-up' size='32px' %}
+                                </div>
+                                <div class="subject-title">Аналитическая геометрия</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'plus-slash-minus' size='32px' %}
+                                </div>
+                                <div class="subject-title">Линейная алгебра</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'bar-chart-line' size='32px' %}
+                                </div>
+                                <div class="subject-title">Теория вероятностей</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'braces' size='32px' %}
+                                </div>
+                                <div class="subject-title">Дифференциальные уравнения</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'grid-3x3' size='32px' %}
+                                </div>
+                                <div class="subject-title">Векторный и тензорный анализ</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'rulers' size='32px' %}
+                                </div>
+                                <div class="subject-title">Уравнения математической физики</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'pie-chart' size='32px' %}
+                                </div>
+                                <div class="subject-title">Статистика</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'clipboard-data' size='32px' %}
+                                </div>
+                                <div class="subject-title">Эконометрика</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'globe-americas' size='32px' %}
+                                </div>
+                                <div class="subject-title">Физика</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon bg-primary bg-gradient">
+                                    {% bs_icon 'percent' size='32px' %}
+                                </div>
+                                <div class="subject-title">Квантовая механика</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-3 pt-5" id="features">
+        <h2 class="pb-2 border-bottom">Преимущества работы с нами</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+                <div class="feature-icon palette-orange bg-gradient mb-3">
+                    {% bs_icon 'cash-stack' size='32px' %}
+                </div>
+                <h2>Нет предоплаты</h2>
+                <p>Работаем без предоплаты</p>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon palette-orange bg-gradient mb-3">
+                    {% bs_icon 'star' size='32px' %}
+                </div>
+                <h2>Качество</h2>
+                <p>Сделаем работу в срок и качественно</p>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon palette-orange bg-gradient mb-3">
+                    {% bs_icon 'calendar-check' size='40px' %}
+                </div>
+                <h2>Гарантия</h2>
+                <p>Вернем деньги, если результат вас не устроит</p>
+            </div>
+        </div>
+    </div>
+
+    {% include 'main_app/recent_reviews.html' %}
+
+    <div class="container my-3">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">Примеры работ</h1>
+                <p class="lead mb-5">Вы можете ознакомиться с примерами наших работ</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                    <a href="{% url 'work_examples' %}" class="btn btn-outline-primary btn-lg px-4 me-md-2 fw-bold">Смотреть</a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <img class="rounded-lg-3" src="static/main_app/img/referat.png" alt="" width="600">
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-12 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-md-6 col-lg-7 text-center text-lg-start">
+                <p class="display-5 fw-bold lh-1 mb-3">Подписаться на рассылку</p>
+                <p class="col-lg-7 fs-4 mb-4">Подпишитесь, чтобы быть в курсе последних акций</p>
+            </div>
+            <div class="col-md-6 col-lg-5 mx-auto">
+                <form action="subscribe" method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput" class="text-muted">Электронная почта</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Подписаться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content%}
