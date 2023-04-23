@@ -1,0 +1,72 @@
+.palette-dark {
+    background-color: #141414;
+}
+
+.palette-blue {
+    background-color: #616cd0;
+}
+
+.palette-light {
+    background-color: #e1e2f3;
+}
+
+.palette-orange {
+    background-color: #f97d36;
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: .75rem;
+}
+
+.icon-link {
+    display: inline-flex;
+    align-items: center;
+}
+.icon-link > .bi {
+    margin-top: .125rem;
+    margin-left: .125rem;
+    transition: transform .25s ease-in-out;
+    fill: currentColor;
+}
+.icon-link:hover > .bi {
+    transform: translate(.25rem);
+}
+
+.icon-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    font-size: 1.5rem;
+    border-radius: .75rem;
+}
+
+.subject-title {
+    font-size: 14pt;
+    line-height: 1.2;
+    margin-left: 18px;
+}
+
+.bg-image {
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    height: 300px;
+    border-radius: 8px;
+
+}
+
+.bg-image-1 {
+    background-image: url("../img/bg-1.jpg");
+    background-size: cover;
+    border-radius: 8px;
+}
