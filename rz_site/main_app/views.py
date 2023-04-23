@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Review
+from django.http import HttpResponseRedirect
 
 
 def index(request):
@@ -24,3 +25,13 @@ def articles(request):
 
 def authorization(request):
     return render(request, 'main_app/authorization.html')
+
+def registration(request):
+    return render(request, 'main_app/registration.html')
+
+def account(request):
+    return render(request, 'main_app/account.html')
+
+def logout(request):
+    # logout logic
+    return HttpResponseRedirect("/")
