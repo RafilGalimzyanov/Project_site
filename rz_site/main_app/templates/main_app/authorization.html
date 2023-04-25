@@ -17,14 +17,13 @@
 			<form action="" class="p-4 p-md-5 border rounded-3 bg-light" method="post">
 				{% csrf_token %}
 				<p class="mb-4">Вход в учетную запись</p>
-				<div class="form-floating mb-3">
-					<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-					<label for="floatingInput" class="text-muted">Почта или логин</label>
-				</div>
-				<div class="form-floating mb-3">
-					<input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-					<label for="floatingPassword" class="text-muted">Пароль</label>
-				</div>
+				{% for f in form%}
+					<div class="form-error">{{ f.errors }}</div>
+					<div class="form-floating mb-3">
+						{{f}}
+						<label class="text-muted">{{f.label}}</label>
+					</div>
+				{% endfor %}
 				<button class="w-100 btn btn-lg btn-outline-primary" type="submit">Войти</button>
 				<hr class="my-4">
 				<small class="text-muted">Забыли пароль? <a href="/">Сбросить</a></small>

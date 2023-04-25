@@ -14,21 +14,16 @@
 			<a href="{% url 'authorization' %}" class="btn btn-lg btn-primary mb-5">Войти</a>
 		</div>
 		<div class="col-md-10 mx-auto col-lg-6 col-xl-5">
-			<form action="" class="p-4 p-md-5 border rounded-3 bg-light" method="post">
+			<form action="{% url 'registration' %}" class="p-4 p-md-5 border rounded-3 bg-light" method="post">
 				{% csrf_token %}
 				<p class="mb-4">Создать учётную запись</p>
+				{% for f in form %}
+				<div class="form-error">{{ f.errors }}</div>
 				<div class="form-floating mb-3">
-					<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-					<label for="floatingInput" class="text-muted">Электронная почта</label>
+					{{ f }}
+					<label class="text-muted">{{ f.label }}</label>
 				</div>
-				<div class="form-floating mb-3">
-					<input type="password" class="form-control" id="floatingPassword1" name="password1" placeholder="Password">
-					<label for="floatingPassword1" class="text-muted">Пароль</label>
-				</div>
-				<div class="form-floating mb-3">
-					<input type="password" class="form-control" id="floatingPassword2" name="password2" placeholder="Password">
-					<label for="floatingPassword2" class="text-muted">Повторите пароль</label>
-				</div>
+				{% endfor %}
 				<button class="w-100 btn btn-lg btn-outline-primary" type="submit">Регистрация</button>
 			</form>
 		</div>

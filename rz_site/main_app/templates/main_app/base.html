@@ -36,7 +36,7 @@
 						<li><a href="{% url 'articles' %}" class="nav-link px-2 me-1 link-dark">Статьи</a></li>
 						<li><a href="{% url 'reviews' %}" class="nav-link px-2 me-1 link-dark">Отзывы</a></li>
 					</ul>
-					{% if user.logged_in %}
+					{% if request.user.is_authorization %}
 						<ul class="nav col-12 col-lg-auto me-lg-0 mb-2 justify-content-center mb-md-0">
 							<li><a href="{% url 'account' %}" class="nav-link px-2 me-1 link-dark">Личный кабинет</a></li>
 							<li><a href="{% url 'logout' %}" class="btn btn-light rounded-pill px-4">Выйти</a></li>

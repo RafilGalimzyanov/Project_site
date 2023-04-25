@@ -1,9 +1,10 @@
 from django.contrib.auth import login, logout
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
-from .forms import RegisterUserForm
+from .forms import RegisterUserForm, LoginUserForm
 from .models import Review
 
 
@@ -29,21 +30,33 @@ def articles(request):
     return render(request, 'main_app/articles.html')
 
 
-def registration(request):
-    return render(request, 'main_app/registration.html')
+# def authorization(request):
+#     return render(request, 'main_app/authorization.html')
 
-
-def out_from_account(request):
-    logout(request)
-    return redirect('index')
-
-
-def authorization(request):
-    return render(request, 'main_app/authorization.html')
+class LoginUser(LoginView):
+    form_class = LoginUserForm
+    template_name = 'main_app/authorization.html'
+    success_url = reverse_lazy('index')
     
-    
-def registration(request):
-    return render(request, 'main_app/registration.html')
+# def registration(request):
+#     if request.method == 'POST':
+#         print('Тууут1')
+#         form = RegisterUserForm(request.POST)
+#         if form.is_valid():
+#             print('Тууут')
+#     else:
+#         form = RegisterUserForm()
+#     return render(request, 'main_app/registration.html', {'form': form})
+
+class RegisterUser(CreateView):
+    form_class = RegisterUserForm
+    template_name = 'main_app/registration.html'
+    success_url = reverse_lazy('index')
+
+    def form_valid(self, form_class):
+        user = form_class.save()
+        login(self.request, user)
+        return redirect('index')
 
 
 def account(request):
