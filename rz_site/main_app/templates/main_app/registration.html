@@ -1,20 +1,39 @@
 {% extends 'main_app/base.html' %}
+{% load bootstrap_icons %}
 
-{% block title %}
-Главная страница
-{% endblock %}
+{% block title %}Регистрация{% endblock %}
 
 {% block content %}
-	<section class="about-ex">
-		<h2>Страница регистрации</h2>
-		<form method="post">
-			{% csrf_token %}
-		{% for f in form %}
-			<p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
-			<div class="form-error">{{ f.errors }}</div>
-		{% endfor %}
+<div class="container col-12 px-4 py-5 bg-image-1">
+	<div class="row align-items-center g-lg-5 py-md-5">
+		<div class="col-lg-6 text-center text-lg-start px-md-5">
+			<img class="mb-4" src="static/main_app/img/logo_64.png" alt="logo">
+			<h1 class="h3 fw-bold lh-1 mb-4 mb-lg-5 bg-light rounded p-4">Помощь в успешной сдаче экзаменов, зачётов и контрольных работ</h1>
+			<button class="btn btn-lg btn-light mb-5 me-2 disabled">У меня есть аккаунт {% bs_icon 'arrow-right' size='24px' %}</button>
+			<a href="{% url 'authorization' %}" class="btn btn-lg btn-primary mb-5">Войти</a>
+		</div>
+		<div class="col-md-10 mx-auto col-lg-6 col-xl-5">
+			<form action="" class="p-4 p-md-5 border rounded-3 bg-light" method="post">
+				{% csrf_token %}
+				<p class="mb-4">Создать учётную запись</p>
+				<div class="form-floating mb-3">
+					<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+					<label for="floatingInput" class="text-muted">Электронная почта</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="password" class="form-control" id="floatingPassword1" name="password1" placeholder="Password">
+					<label for="floatingPassword1" class="text-muted">Пароль</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="password" class="form-control" id="floatingPassword2" name="password2" placeholder="Password">
+					<label for="floatingPassword2" class="text-muted">Повторите пароль</label>
+				</div>
+				<button class="w-100 btn btn-lg btn-outline-primary" type="submit">Регистрация</button>
+			</form>
+		</div>
+	</div>
+</div>
 
-			<button type="submit">Регистрация</button>
-		</form>
-	</section>
-{% endblock %}
+{% include 'main_app/recent_reviews.html' %}
+
+{% endblock content %}

@@ -4,36 +4,68 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% load static %}
-	<link href="{% static 'main_app/css/style.css' %}" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,400&display=swap" 
-		rel="stylesheet">
 	<title>{% block title %}{% endblock %}</title>
-	<link rel="shortcut icon" href="static/main_app/img/icon.png" type="image/x-icon">
+
+	<!-- Bootstrap 5 -->
+	{% load django_bootstrap5 %}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+	{% bootstrap_messages %}
+
+	{% load bootstrap_icons %}
+
+	<link href="{% static 'main_app/css/main.css' %}" rel="stylesheet">
+
+	<link rel="shortcut icon" href="static/main_app/img/logo_32.png" type="image/x-icon">
 </head>
 <body>
-	<header class="page-header">
-		<nav class="nav-header">
-			<a class="icon-header" href="{% url 'index' %}">
-					<img src="{% static 'main_app/img/icon.png' %}" alt="Иконка компании" width="60px" height="60px">
-			</a>
-			<ul class="list-header">
-				{% for m in menu %}
-					<li class="item-list"><a href="{% url m.url %}">{{m.title}}</a></li>
-				{% endfor %}
 
-				{% if request.user.is_authenticated %}
-				<li class="item-list last-elem"> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
-				{% else %}
-				<li class="item-list last-elem">
-					<a href="{% url 'registration' %}">Регистрация</a> | <a href="{% url 'authorization' %}">Войти</a>
-				</li>
-				{% endif %}
-			</ul>
-		</nav>
-	</header>
+	{% block header %}
+		<header class="p-3 mb-3 border-bottom">
+			<div class="container">
+				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+					<div class="me-lg-3">
+						<a href="/">
+							<img src="static/main_app/img/logo_32.png" alt="logo">
+						</a>
+					</div>
+
+					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+						<li><a href="{% url 'index' %}" class="nav-link px-2 me-1 link-dark">Главная</a></li>
+						<li><a href="{% url 'work_examples' %}" class="nav-link px-2 me-1 link-dark">Примеры работ</a></li>
+						<li><a href="{% url 'articles' %}" class="nav-link px-2 me-1 link-dark">Статьи</a></li>
+						<li><a href="{% url 'reviews' %}" class="nav-link px-2 me-1 link-dark">Отзывы</a></li>
+					</ul>
+					{% if user.logged_in %}
+						<ul class="nav col-12 col-lg-auto me-lg-0 mb-2 justify-content-center mb-md-0">
+							<li><a href="{% url 'account' %}" class="nav-link px-2 me-1 link-dark">Личный кабинет</a></li>
+							<li><a href="{% url 'logout' %}" class="btn btn-light rounded-pill px-4">Выйти</a></li>
+						</ul>
+					{% else %}
+						<a href="{% url 'authorization' %}" class="btn btn-light rounded-pill px-4">Войти</a>
+					{% endif %}
+				</div>
+			</div>
+		</header>
+	{% endblock header %}
+
 	{% block content %}
+	{% endblock %}
+
+	{% block footer %}
+	    <div class="container">
+		  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+			<p class="col-md-5 mb-0 text-muted">© 2023</p>
+			<a href="/" class="d-none d-lg-flex justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+			  <img src="static/main_app/img/logo_32.png" alt="logo">
+			</a>
+			<ul class="nav col-md-6 justify-content-end">
+			  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Вконтакте</a></li>
+			  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Whatsapp</a></li>
+			  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Telegram</a></li>
+			</ul>
+		  </footer>
+		</div>
 	{% endblock %}
 </body>
 </html>
