@@ -1,5 +1,6 @@
 {% extends 'main_app/base.html' %}
 {% load bootstrap_icons %}
+{% load static %}
 
 {% block title %}Регистрация{% endblock %}
 
@@ -7,7 +8,7 @@
 <div class="container col-12 px-4 py-5 bg-image-1">
 	<div class="row align-items-center g-lg-5 py-md-5">
 		<div class="col-lg-6 text-center text-lg-start px-md-5">
-			<img class="mb-4" src="static/main_app/img/logo_64.png" alt="logo">
+			<img class="mb-4" src="{% static 'main_app/img/logo_32.png' %}" alt="logo">
 			<h1 class="h3 fw-bold lh-1 mb-4 mb-lg-5 bg-light rounded p-4">Помощь в успешной сдаче экзаменов, зачётов и контрольных работ</h1>
 			<button class="btn btn-lg btn-light mb-5 me-2 disabled">У меня есть аккаунт {% bs_icon 'arrow-right' size='24px' %}</button>
 			<a href="{% url 'authorization' %}" class="btn btn-lg btn-primary mb-5">Войти</a>
