@@ -30,23 +30,11 @@ def articles(request):
     return render(request, 'main_app/articles.html')
 
 
-# def authorization(request):
-#     return render(request, 'main_app/authorization.html')
-
 class LoginUser(LoginView):
     form_class = LoginUserForm
     template_name = 'main_app/authorization.html'
     success_url = reverse_lazy('index')
     
-# def registration(request):
-#     if request.method == 'POST':
-#         print('Тууут1')
-#         form = RegisterUserForm(request.POST)
-#         if form.is_valid():
-#             print('Тууут')
-#     else:
-#         form = RegisterUserForm()
-#     return render(request, 'main_app/registration.html', {'form': form})
 
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
