@@ -24,102 +24,16 @@
                 <h2 class="mt-2 mb-5 ms-3">Дисциплины, с которыми мы можем помочь:</h2>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'infinity' size='32px' %}
+                        {% for discipline in disciplines_list %}
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="feature-icon bg-primary bg-gradient">
+                                        {% bs_icon discipline.img size='32px' %}
+                                    </div>
+                                    <div class="subject-title">{{discipline.name}}</div>
                                 </div>
-                                <div class="subject-title">Высшая математика</div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'bar-chart' size='32px' %}
-                                </div>
-                                <div class="subject-title">Математический анализ</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'graph-up' size='32px' %}
-                                </div>
-                                <div class="subject-title">Аналитическая геометрия</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'plus-slash-minus' size='32px' %}
-                                </div>
-                                <div class="subject-title">Линейная алгебра</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'bar-chart-line' size='32px' %}
-                                </div>
-                                <div class="subject-title">Теория вероятностей</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'braces' size='32px' %}
-                                </div>
-                                <div class="subject-title">Дифференциальные уравнения</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'grid-3x3' size='32px' %}
-                                </div>
-                                <div class="subject-title">Векторный и тензорный анализ</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'rulers' size='32px' %}
-                                </div>
-                                <div class="subject-title">Уравнения математической физики</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'pie-chart' size='32px' %}
-                                </div>
-                                <div class="subject-title">Статистика</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'clipboard-data' size='32px' %}
-                                </div>
-                                <div class="subject-title">Эконометрика</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'globe-americas' size='32px' %}
-                                </div>
-                                <div class="subject-title">Физика</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="feature-icon bg-primary bg-gradient">
-                                    {% bs_icon 'percent' size='32px' %}
-                                </div>
-                                <div class="subject-title">Квантовая механика</div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

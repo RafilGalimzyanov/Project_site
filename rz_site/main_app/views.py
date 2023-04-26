@@ -2,16 +2,16 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, FormView
 
-from .forms import RegisterUserForm, LoginUserForm
-from .models import Review
+from .forms import RegisterUserForm, LoginUserForm, AddReviewForm
+from .models import Review, Articles
+from .utils import disciplines_list
 
 
 def index(request):
-    if request.user.is_authenticated:
-        return render(request, 'main_app/index.html')
-    return render(request, 'main_app/index.html')
+    context = {'disciplines_list': disciplines_list, }
+    return render(request, 'main_app/index.html', context=context)
 
 
 def work_examples(request):
@@ -27,13 +27,19 @@ def reviews(request):
 
 
 def articles(request):
-    return render(request, 'main_app/articles.html')
+    all_articles = Articles.objects.all()
+    context = {
+        'articles': all_articles,
+    }
+    return render(request, 'main_app/articles.html', context=context)
 
 
 class LoginUser(LoginView):
     form_class = LoginUserForm
     template_name = 'main_app/authorization.html'
-    success_url = reverse_lazy('index')
+
+    def get_success_url(self):
+        return reverse_lazy('index')
     
 
 class RegisterUser(CreateView):
@@ -51,5 +57,17 @@ def account(request):
     return render(request, 'main_app/account.html')
 
 
-def logout(request):
+def logout_for_user(request):
+    logout(request)
     return render(request, 'main_app/index.html')
+
+
+# def add_review(request):
+#     return render(request, 'main_app/add_review.html')
+
+class AddReview(FormView):
+    form_class = AddReviewForm
+    template_name = 'main_app/add_review.html'
+
+    def get_success_url(self):
+        return reverse_lazy('index')

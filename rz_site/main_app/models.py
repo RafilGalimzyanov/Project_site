@@ -1,9 +1,12 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
 class Articles(models.Model):
+    topic = models.CharField(max_length=50, null=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
+    author = models.CharField(max_length=50, null=True)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=True)

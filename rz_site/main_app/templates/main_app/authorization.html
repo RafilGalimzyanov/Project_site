@@ -14,10 +14,10 @@
 			<a href="{% url 'registration' %}" class="btn btn-lg btn-primary mb-5">Регистрация</a>
 		</div>
 		<div class="col-md-10 mx-auto col-lg-6 col-xl-5">
-			<form action="" class="p-4 p-md-5 border rounded-3 bg-light" method="post">
+			<form action="{% url 'authorization' %}" class="p-4 p-md-5 border rounded-3 bg-light" method="post">
 				{% csrf_token %}
 				<p class="mb-4">Вход в учетную запись</p>
-				{% for f in form%}
+				{% for f in form %}
 					<div class="form-error">{{ f.errors }}</div>
 					<div class="form-floating mb-3">
 						{{f}}

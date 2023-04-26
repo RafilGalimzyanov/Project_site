@@ -22,7 +22,18 @@ class RegisterUserForm(UserCreationForm):
 
 
 class LoginUserForm(AuthenticationForm):
-    username = forms.CharField(label='Почта или логин', widget=forms.TextInput(attrs={
-        'class': 'form-control', 'id': 'floatingInput', 'name': 'email', 'placeholder': 'name@example.com', }))
+    username = forms.CharField(label='Имя', widget=forms.TextInput(attrs={
+        'class': 'form-control', 'id': 'floatingInput', 'name': 'email', 'placeholder': 'name', }))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={
         'class': 'form-control', 'id': 'floatingPassword', 'name': 'password', 'placeholder': 'Password', }))
+
+
+class AddReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['name', 'rev']
+        widgets = {
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'rev': forms.Textarea(attrs={'class': 'form-control h-25'}),
+        }
