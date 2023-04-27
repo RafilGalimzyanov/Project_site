@@ -70,5 +70,14 @@ class AddReview(FormView):
     form_class = AddReviewForm
     template_name = 'main_app/add_review.html'
 
-    def get_success_url(self):
-        return reverse_lazy('index')
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('reviews')
+
+        return render(request, self.template_name, {'form': form})
