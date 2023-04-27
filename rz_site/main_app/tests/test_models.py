@@ -1,12 +1,12 @@
 from django.test import SimpleTestCase, TestCase
 
-from main_app.models import Article, Review
+from main_app.models import Articles, Review
 
-class ArticleModelTests(TestCase):
+class ArticlesModelTests(TestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		cls.article = Article.objects.create(
+		cls.article = Articles.objects.create(
 			title="title example",
 			content="content example",
 		)
