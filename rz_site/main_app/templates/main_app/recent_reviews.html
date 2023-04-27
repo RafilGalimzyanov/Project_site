@@ -1,42 +1,12 @@
 {% load bootstrap_icons %}
+{% load main_tags %}
 
 <div class="container px-3 py-5">
     <p class="h2 d-inline">Последние отзывы</p>
     <a href="{% url 'reviews' %}" class="btn btn-light d-none d-sm-inline rounded-pill px-4 float-end">Смотреть все</a>
     <hr class="my-4">
     <div class="row g-4 my-2 row-cols-1 row-cols-lg-3">
-        <div class="col pe-4">
-            <div class="d-flex align-items-center mb-2">
-                <div class="feature-icon bg-primary bg-gradient rounded-circle mb-3">
-                    {% bs_icon 'person-circle' size='32px' %}
-                </div>
-                <p class="ms-3 fs-5">Кирилл</p>
-                <p class="ms-auto text-muted">21 апреля</p>
-            </div>
-            <p class="">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        </div>
-        <div class="col pe-4">
-            <div class="d-flex align-items-center mb-2">
-                <div class="feature-icon bg-primary bg-gradient rounded-circle mb-3">
-                    {% bs_icon 'person-circle' size='32px' %}
-                </div>
-                <p class="ms-3 fs-5">Анна</p>
-                <p class="ms-auto text-muted">16 апреля</p>
-            </div>
-            <p class="">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        </div>
-        <div class="col pe-4">
-            <div class="d-flex align-items-center mb-2">
-                <div class="feature-icon bg-primary bg-gradient rounded-circle mb-3">
-                    {% bs_icon 'person-circle' size='32px' %}
-                </div>
-                <p class="ms-3 fs-5">Евгений</p>
-                <p class="ms-auto text-muted">7 апреля</p>
-            </div>
-            <p class="">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        </div>
-
-        {% for review in recent_reviews %}
+        {% for review in reviews %}
             <div class="col pe-4">
                 <div class="d-flex align-items-center mb-2">
                     <div class="feature-icon bg-primary bg-gradient rounded-circle mb-3">
