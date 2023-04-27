@@ -1,4 +1,5 @@
 {% extends 'main_app/base.html' %}
+{% load main_tags %}
 {% load bootstrap_icons %}
 
 {% block title %}Главная{% endblock %}
@@ -67,7 +68,7 @@
         </div>
     </div>
 
-    {% include 'main_app/recent_reviews.html' %}
+    {% show_reviews %}
 
     <div class="container my-3">
         <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">

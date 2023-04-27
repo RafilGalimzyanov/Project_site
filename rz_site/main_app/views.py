@@ -10,7 +10,8 @@ from .utils import disciplines_list
 
 
 def index(request):
-    context = {'disciplines_list': disciplines_list, }
+    all_articles = Articles.objects.all()
+    context = {'disciplines_list': disciplines_list, 'recent_reviews': all_articles,}
     return render(request, 'main_app/index.html', context=context)
 
 
