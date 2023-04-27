@@ -44,27 +44,15 @@
     <div class="container px-3 pt-5" id="features">
         <h2 class="pb-2 border-bottom">Преимущества работы с нами</h2>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-            <div class="feature col">
-                <div class="feature-icon palette-orange bg-gradient mb-3">
-                    {% bs_icon 'cash-stack' size='32px' %}
+            {% for advantage in advantages_list %}
+                <div class="feature col">
+                    <div class="feature-icon palette-orange bg-gradient mb-3">
+                        {% bs_icon advantage.img size='32px' %}
+                    </div>
+                    <h2>{{advantage.name}}</h2>
+                    <p>{{advantage.description}}</p>
                 </div>
-                <h2>Нет предоплаты</h2>
-                <p>Работаем без предоплаты</p>
-            </div>
-            <div class="feature col">
-                <div class="feature-icon palette-orange bg-gradient mb-3">
-                    {% bs_icon 'star' size='32px' %}
-                </div>
-                <h2>Качество</h2>
-                <p>Сделаем работу в срок и качественно</p>
-            </div>
-            <div class="feature col">
-                <div class="feature-icon palette-orange bg-gradient mb-3">
-                    {% bs_icon 'calendar-check' size='40px' %}
-                </div>
-                <h2>Гарантия</h2>
-                <p>Вернем деньги, если результат вас не устроит</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 

@@ -9,5 +9,5 @@ register = template.Library()
 def show_reviews():
     reviews = Review.objects.all()
     if len(reviews) >= 3:
-        reviews = Review.objects.all()[:3]
+        reviews = reviews.order_by('-pk')[:3]
     return {"reviews": reviews}

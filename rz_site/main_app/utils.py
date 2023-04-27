@@ -12,3 +12,9 @@ disciplines_list = [
     {'name': 'Физика', 'img': 'globe-americas'},
     {'name': 'Квантовая механика', 'img': 'percent'},
 ]
+
+advantages_list = [
+    {'name': 'Нет предоплат', 'description': 'Работаем без предоплаты', 'img': 'cash-stack'},
+    {'name': 'Качество', 'description': 'Сделаем работу в срок и качественно', 'img': 'calendar-check'},
+    {'name': 'Гарантия', 'description': 'Вернем деньги, если результат вас не устроит', 'img': 'calendar-check'},
+]
