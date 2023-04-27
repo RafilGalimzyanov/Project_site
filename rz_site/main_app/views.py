@@ -6,12 +6,12 @@ from django.views.generic import CreateView, FormView
 
 from .forms import RegisterUserForm, LoginUserForm, AddReviewForm
 from .models import Review, Articles
-from .utils import disciplines_list
+from .utils import disciplines_list, advantages_list
 
 
 def index(request):
     all_articles = Articles.objects.all()
-    context = {'disciplines_list': disciplines_list, 'recent_reviews': all_articles,}
+    context = {'disciplines_list': disciplines_list, 'recent_reviews': all_articles, 'advantages_list': advantages_list}
     return render(request, 'main_app/index.html', context=context)
 
 
@@ -46,7 +46,7 @@ class LoginUser(LoginView):
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
     template_name = 'main_app/registration.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('reviews')
 
     def form_valid(self, form_class):
         user = form_class.save()

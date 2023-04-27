@@ -31,7 +31,7 @@ class LoginUserForm(AuthenticationForm):
 class AddReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['name', 'rev']
+        fields = ['name', 'rev', ]
         widgets = {
             'email': forms.TextInput(attrs={'class': 'form-control'}),
             'name': forms.TextInput(attrs={'class': 'form-control'}),

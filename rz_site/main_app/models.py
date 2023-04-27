@@ -23,6 +23,7 @@ class Review(models.Model):
     email = models.EmailField()
     name = models.CharField(max_length=100, verbose_name='Имя')
     rev = models.TextField(blank=True, verbose_name='Отзыв')
+    time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время публикации')
 
     def __str__(self):
         return self.name
