@@ -63,9 +63,6 @@ def logout_for_user(request):
     return render(request, 'main_app/index.html')
 
 
-# def add_review(request):
-#     return render(request, 'main_app/add_review.html')
-
 class AddReview(FormView):
     form_class = AddReviewForm
     template_name = 'main_app/add_review.html'
