@@ -1,4 +1,5 @@
 {% extends 'main_app/base.html' %}
+{% load static %}
 {% load main_tags %}
 {% load bootstrap_icons %}
 
@@ -67,8 +68,8 @@
                     <a href="{% url 'work_examples' %}" class="btn btn-outline-primary btn-lg px-4 me-md-2 fw-bold">Смотреть</a>
                 </div>
             </div>
-            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                <img class="rounded-lg-3" src="static/main_app/img/referat.png" alt="" width="600">
+            <div class="col-lg-4 col-md-9 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <img class="rounded-lg-3" src="{% static 'main_app/img/examples/KR_1_m2_n1_page-0001.jpg' %}" alt="Пример работы" width="450">
             </div>
         </div>
     </div>
