@@ -1,4 +1,5 @@
 {% extends 'main_app/base.html' %}
+{% load static %}
 
 {% block title %}Примеры работ{% endblock %}
 
@@ -6,7 +7,231 @@
 	<div class="container px-3 py-3">
 		<div class="bg-light rounded p-5">
 			<p class="h2 d-inline">Примеры работ</p>
+			{% if request.user.is_authenticated %}
+				<a href="{% url 'add_review' %}" class="btn btn-warning d-none d-sm-inline rounded-pill px-4 float-end">
+					Заказать работу
+				</a>
+			{% else %}
+				<a href="{% url 'authorization' %}" class="btn btn-warning d-none d-sm-inline rounded-pill px-4 float-end">
+					Войдите, чтобы заказать работу
+				</a>
+			{% endif %}
 		</div>
 		<hr class="my-4">
+		<div class="row">
+			<p class="h3 m-3">Семестровая контрольная по высшей математике</p>
+			<div class="col-md-6">
+				<div id="carouselExampleIndicators1" class="carousel carousel-dark slide" data-bs-interval="false">
+				  <div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				  </div>
+				  <div class="carousel-inner">
+					<div class="carousel-item active">
+					  <img src="{% static 'main_app/img/examples/KR_1_m2_n1_page-0001.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/KR_1_m2_n1_page-0001.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				  </button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="bg-light rounded p-3 p-lg-5 mt-lg-4">
+					<p class="m-2">
+						<span class="text-muted me-2">Дисциплина:</span>
+						<span>Высшая математика</span>
+					</p>
+					<p class="m-2">
+						<span class="text-muted me-2">Вуз:</span>
+						<span>ПГУПС</span>
+					</p>
+					<p class="m-2">
+						<span class="text-muted me-2">Срок выполнения:</span>
+						<span>1-2 дня</span>
+					</p>
+					<p class="mx-2 my-4">
+						<span class="text-muted me-2">Описание:</span>
+						<span class="d-block mt-2">Семестровая контрольная работа по высшей математике. Включает в себя работу с матрицами, векторами и аналитическую геометрию</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+		<p class="h3 m-3">Семестровая контрольная работа по матанализу</p>
+			<div class="col-md-6">
+				<div id="carouselExampleIndicators2" class="carousel carousel-dark slide" data-bs-interval="false">
+				  <div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+				  </div>
+				  <div class="carousel-inner">
+					<div class="carousel-item active">
+					  <img src="{% static 'main_app/img/examples/math_v19_page-0001.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/math_v19_page-0002.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/math_v19_page-0003.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/math_v19_page-0004.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/math_v19_page-0005.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				  </button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="bg-light rounded p-3 p-lg-5 mt-lg-4">
+					<p class="m-2">
+						<span class="text-muted me-2">Дисциплина:</span>
+						<span>Математический анализ</span>
+					</p>
+					<p class="m-2">
+						<span class="text-muted me-2">Вуз:</span>
+						<span>ПГУПС</span>
+					</p>
+					<p class="m-2">
+						<span class="text-muted me-2">Срок выполнения:</span>
+						<span>1-2 дня</span>
+					</p>
+					<p class="mx-2 my-4">
+						<span class="text-muted me-2">Описание:</span>
+						<span class="d-block mt-2">Включает в себя задачи по работе с матричными уравнениями, СЛАУ, аналитической геометрии, пределам, производным ФНП, интегралам (определенным/неопределенным, несобственным)</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+		<p class="h3 m-3">Контрольная работа по теории вероятностей</p>
+			<div class="col-md-6">
+				<div id="carouselExampleIndicators3" class="carousel carousel-dark slide" data-bs-interval="false">
+				  <div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				  </div>
+				  <div class="carousel-inner">
+					<div class="carousel-item active">
+					  <img src="{% static 'main_app/img/examples/Sofia_matan_page-0001.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/Sofia_matan_page-0001.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				  </button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="bg-light rounded p-3 p-lg-5 mt-lg-4">
+					<p class="m-2">
+						<span class="text-muted me-2">Дисциплина:</span>
+						<span>Теория вероятностей</span>
+					</p>
+					<p class="m-2">
+						<span class="text-muted me-2">Вуз:</span>
+						<span>ЮРГПУ</span>
+					</p>
+					<p class="m-2">
+						<span class="text-muted me-2">Срок выполнения:</span>
+						<span>1 день</span>
+					</p>
+					<p class="mx-2 my-4">
+						<span class="text-muted me-2">Описание:</span>
+						<span class="d-block mt-2">Включает в себя задачи по классической вероятности, комбинаторике, теоремам Муавра-Лапласа, биномиальному распределению, поиску статистических моментов</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+		<p class="h3 m-3">Семестровая контрольная работа по матанализу</p>
+			<div class="col-md-6">
+				<div id="carouselExampleIndicators4" class="carousel carousel-dark slide" data-bs-interval="false">
+				  <div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="3" aria-label="Slide 4"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="4" aria-label="Slide 5"></button>
+				  </div>
+				  <div class="carousel-inner">
+					<div class="carousel-item active">
+					  <img src="{% static 'main_app/img/examples/V84_page-0001.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/V84_page-0002.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/V84_page-0003.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/V84_page-0004.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+					  <img src="{% static 'main_app/img/examples/V84_page-0005.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				  </button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="bg-light rounded p-3 p-lg-5 mt-lg-4">
+					<p class="m-2">
+						<span class="text-muted me-2">Дисциплина:</span>
+						<span>Математический анализ</span>
+					</p>
+					<p class="m-2">
+						<span class="text-muted me-2">Вуз:</span>
+						<span>ГУМРФ</span>
+					</p>
+					<p class="m-2">
+						<span class="text-muted me-2">Срок выполнения:</span>
+						<span>1-2 дня</span>
+					</p>
+					<p class="mx-2 my-4">
+						<span class="text-muted me-2">Описание:</span>
+						<span class="d-block mt-2">Включает в себя задачи по рядам (исследование на сходимость, поиск интервала сходимости), диффурам (Линейные ДУ 1-го порядка, метод Бернулли, ДУ высших порядков), теории вероятностей (Дискретные/непрерывные СВ)</span>
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock %}
