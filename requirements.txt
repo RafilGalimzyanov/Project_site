@@ -1,4 +1,6 @@
 asgiref==3.6.0
 Django==4.2
+django-bootstrap-icons==0.8.3
+django-bootstrap5==23.1
 sqlparse==0.4.3
 tzdata==2023.3
