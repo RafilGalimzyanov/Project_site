@@ -76,5 +76,4 @@ class AddReview(FormView):
         if form.is_valid():
             form.save()
             return redirect('reviews')
-
         return render(request, self.template_name, {'form': form})
